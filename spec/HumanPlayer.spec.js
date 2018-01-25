@@ -1,13 +1,21 @@
 import HumanPlayer from '../src/HumanPlayer'
 
 describe('Human player', function() {
-
   let humanPlayer
+  let uiStub
+
   beforeEach(() => {
-    humanPlayer = new HumanPlayer()
+    uiStub = new UiStub()
+    humanPlayer = new HumanPlayer(uiStub)
   })
 
   it('returns a move', function() {
-    expect(humanPlayer.makeMove()).toBe('Rock');
+    expect(humanPlayer.makeMove(uiStub)).toBe('Rock');
   })
 })
+
+class UiStub {
+  askForMove() {
+    return 'Rock'
+  }
+}

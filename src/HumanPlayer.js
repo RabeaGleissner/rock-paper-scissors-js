@@ -1,6 +1,9 @@
 export default class HumanPlayer {
+  constructor(ui) {
+    this.ui = ui
+  }
   makeMove() {
-    return 'Rock'
+    return this.ui.askForMove()
   }
 }
 
