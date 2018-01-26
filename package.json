@@ -7,10 +7,11 @@
     "test": "jasmine"
   },
   "scripts": {
-    "start": "node dist/bundle.js"
+    "start": "node dist/bundle.js",
+    "lint": "eslint **/*.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Rabea Gleissner",
+  "license": "",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -19,6 +20,7 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
+    "eslint": "^4.16.0",
     "prompt": "^1.0.0",
     "prompt-sync": "^4.1.5"
   }

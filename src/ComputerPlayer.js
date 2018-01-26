@@ -8,4 +8,4 @@ export class ComputerPlayer {
   }
 }
 
-export const moves = ["Rock", "Paper", "Scissors"]
+export const moves = ['Rock', 'Paper', 'Scissors']
