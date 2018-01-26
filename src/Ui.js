@@ -6,7 +6,7 @@ export default class Ui {
   }
 
   greet() {
-    this.output.log('::: Welcome to Rock Paper Scissors :::')
+    this.output.log('::: Welcome to Rock Paper Scissors :::\n')
   }
 
   askForMove() {
@@ -18,8 +18,12 @@ export default class Ui {
     this.output.log(`Winner: ${winner}`)
   }
 
+  announceComputerMove(move) {
+    this.output.log(`The computer played ${move}.`)
+  }
+
   getReplayChoice() {
-    this.output.log('Do you fancy playing again?')
+    this.output.log('Do you fancy playing again? y/n')
     return this.input()
   }
 

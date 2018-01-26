@@ -12,11 +12,12 @@ describe('Ui', function() {
   beforeEach(() => {
     outputSpy = new OutputSpy()
     ui = new Ui(inputSpy, outputSpy)
+    askedForInput = false
   })
 
   it('greets the user', () => {
     ui.greet()
-    expect(outputSpy.printedMessage()).toEqual('::: Welcome to Rock Paper Scissors :::')
+    expect(outputSpy.printedMessage()).toEqual('::: Welcome to Rock Paper Scissors :::\n')
   })
 
   it('asks user to enter a move', () => {
@@ -24,7 +25,7 @@ describe('Ui', function() {
     expect(outputSpy.printedMessage()).toEqual('Enter your move:')
   })
 
-  it('gets user input', () => {
+  it('gets user input for move', () => {
     ui.askForMove()
     expect(askedForInput).toBe(true)
   })
@@ -32,6 +33,21 @@ describe('Ui', function() {
   it('announces the winner', () => {
     ui.announceWinner('you!')
     expect(outputSpy.printedMessage()).toEqual('Winner: you!')
+  })
+
+  it('announces computer move', () => {
+    ui.announceComputerMove('rock')
+    expect(outputSpy.printedMessage()).toEqual('The computer played rock.')
+  })
+
+  it('asks if user wants to play again', () => {
+    ui.getReplayChoice()
+    expect(outputSpy.printedMessage()).toEqual('Do you fancy playing again?')
+  })
+
+  it('gets user input for replay', () => {
+    ui.getReplayChoice()
+    expect(askedForInput).toBe(true)
   })
 
   it('says goodbye', () => {
