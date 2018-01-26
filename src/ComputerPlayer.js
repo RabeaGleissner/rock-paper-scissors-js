@@ -1,5 +1,3 @@
-export const moves = ["Rock", "Paper", "Scissors"]
-
 export class ComputerPlayer {
   makeMove() {
     return this.shuffle(moves)[0]
@@ -10,3 +8,4 @@ export class ComputerPlayer {
   }
 }
 
+export const moves = ["Rock", "Paper", "Scissors"]

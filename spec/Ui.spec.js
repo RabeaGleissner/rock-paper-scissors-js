@@ -42,7 +42,7 @@ describe('Ui', function() {
 
   it('asks if user wants to play again', () => {
     ui.getReplayChoice()
-    expect(outputSpy.printedMessage()).toEqual('Do you fancy playing again?')
+    expect(outputSpy.printedMessage()).toEqual('Do you fancy playing again? y/n')
   })
 
   it('gets user input for replay', () => {
@@ -56,7 +56,7 @@ describe('Ui', function() {
   })
 })
 
-class OutputSpy{
+class OutputSpy {
   constructor() {
     this.message = ''
   }

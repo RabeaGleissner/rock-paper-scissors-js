@@ -1,6 +1,6 @@
 import HumanPlayer from '../src/HumanPlayer'
 
-describe('Human player', function() {
+describe('Human player', () => {
   let humanPlayer
   let uiStub
 
