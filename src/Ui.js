@@ -10,12 +10,12 @@ export default class Ui {
   }
 
   askForMove() {
-    this.output.log('Enter your move:')
+    this.output.log('Enter your move:\n')
     return this.input()
   }
 
   announceWinner(winner) {
-    this.output.log(`Winner: ${winner}`)
+    this.output.log(`Winner: ${winner}\n`)
   }
 
   announceComputerMove(move) {

@@ -22,7 +22,7 @@ describe('Ui', function() {
 
   it('asks user to enter a move', () => {
     ui.askForMove()
-    expect(outputSpy.printedMessage()).toEqual('Enter your move:')
+    expect(outputSpy.printedMessage()).toEqual('Enter your move:\n')
   })
 
   it('gets user input for move', () => {
@@ -32,7 +32,7 @@ describe('Ui', function() {
 
   it('announces the winner', () => {
     ui.announceWinner('you!')
-    expect(outputSpy.printedMessage()).toEqual('Winner: you!')
+    expect(outputSpy.printedMessage()).toEqual('Winner: you!\n')
   })
 
   it('announces computer move', () => {
