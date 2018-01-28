@@ -48,6 +48,13 @@ describe('RockPaperScissors', () => {
   })
 })
 
+class UiDummy {
+  greet() {}
+  announceComputerMove(_) {}
+  announceWinner(_) {}
+  sayBye() {}
+}
+
 class FakePlayer {
   constructor(move, replayChoice) {
     this.move = move
@@ -67,13 +74,6 @@ class FakePlayer {
   makeMoveCallCount() {
     return this.count
   }
-}
-
-class UiDummy {
-  greet() {}
-  announceComputerMove(_) {}
-  announceWinner(_) {}
-  sayBye() {}
 }
 
 class WinningMoveStub {

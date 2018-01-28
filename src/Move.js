@@ -10,9 +10,10 @@ export default class Move {
       'paper': 'rock'
     }
 
-    return Object.keys(winnersAndLosers).some((key) => {
-      if (this.chosenMove.toLowerCase() === key &&
-          secondMove.chosenMove.toLowerCase() === winnersAndLosers[key]) {
+    return Object.keys(winnersAndLosers).some((winner) => {
+      const loser = winnersAndLosers[winner]
+      if (this.chosenMove.toLowerCase() === winner &&
+          secondMove.chosenMove.toLowerCase() === loser) {
         return true
       }
     })

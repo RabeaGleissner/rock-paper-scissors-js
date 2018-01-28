@@ -1,7 +1,6 @@
 import Move from './Move'
 
 export default class RockPaperScissors {
-
   constructor(ui, humanPlayer, computerPlayer) {
     this.ui = ui
     this.humanPlayer = humanPlayer
@@ -15,6 +14,7 @@ export default class RockPaperScissors {
 
   play() {
     this.playOneRound()
+    this.replay()
   }
 
   playOneRound() {
@@ -23,16 +23,6 @@ export default class RockPaperScissors {
     this.ui.announceComputerMove(computerMove.chosenMove)
     const winner = this.calculateWinner(humanMove, computerMove)
     this.ui.announceWinner(winner)
-    this.replay()
-  }
-
-  replay() {
-    const replayChoice = this.humanPlayer.getReplayChoice()
-    if (replayChoice === 'y') {
-      this.play()
-    } else {
-      this.ui.sayBye()
-    }
   }
 
   calculateWinner(humanMove, computerMove) {
@@ -42,6 +32,15 @@ export default class RockPaperScissors {
       return 'Computer'
     } else {
       return 'No winner! It\'s a draw.'
+    }
+  }
+
+  replay() {
+    const replayChoice = this.humanPlayer.getReplayChoice()
+    if (replayChoice === 'y') {
+      this.play()
+    } else {
+      this.ui.sayBye()
     }
   }
 }
