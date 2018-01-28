@@ -23,29 +23,27 @@ describe('RockPaperScissors', () => {
   })
 
   describe('Play the game', () => {
-    let uiDouble
+    let uiDummy
     let fakeHuman
     let fakeComputer
 
     beforeEach(() => {
-      uiDouble = new UiDouble(false)
+      uiDummy = new UiDummy()
       fakeComputer = new FakePlayer('rock', null)
     })
 
     it('plays one game', () => {
       fakeHuman = new FakePlayer('paper', ['n'])
-      game = new RockPaperScissors(uiDouble, fakeHuman, fakeComputer)
+      game = new RockPaperScissors(uiDummy, fakeHuman, fakeComputer)
       game.run()
       expect(fakeHuman.makeMoveCallCount()).toEqual(1)
-      expect(uiDouble.sayByeWasCalled()).toEqual(true)
     })
 
     it('plays two games', () => {
       fakeHuman = new FakePlayer('paper', ['y', 'n'])
-      game = new RockPaperScissors(uiDouble, fakeHuman, fakeComputer)
+      game = new RockPaperScissors(uiDummy, fakeHuman, fakeComputer)
       game.run()
       expect(fakeHuman.makeMoveCallCount()).toEqual(2)
-      expect(uiDouble.sayByeWasCalled()).toEqual(true)
     })
   })
 })
@@ -71,22 +69,11 @@ class FakePlayer {
   }
 }
 
-class UiDouble {
-  constructor(saidBye) {
-    this.saidBye = saidBye
-  }
-
+class UiDummy {
   greet() {}
   announceComputerMove(_) {}
   announceWinner(_) {}
-
-  sayBye() {
-    this.saidBye = true
-  }
-
-  sayByeWasCalled() {
-    return this.saidBye
-  }
+  sayBye() {}
 }
 
 class WinningMoveStub {
