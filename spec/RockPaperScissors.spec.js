@@ -1,5 +1,9 @@
-import RockPaperScissors from '../src/RockPaperScissors'
+import HumanPlayer from '../src/HumanPlayer'
 import Move from '../src/Move'
+import RockPaperScissors from '../src/RockPaperScissors'
+import Ui from '../src/Ui'
+import prompt from 'prompt-sync'
+import {ComputerPlayer} from '../src/ComputerPlayer'
 
 describe('RockPaperScissors', () => {
   let game
@@ -23,6 +27,29 @@ describe('RockPaperScissors', () => {
     })
   })
 
+  describe('Compare testing with and without doubles', () => {
+    xit('plays game NO TEST DOUBLES', () => {
+      const consoleInput = require('prompt-sync')()
+      const consoleOutput = console
+      const ui = new Ui(consoleInput, consoleOutput)
+      const game = new RockPaperScissors(ui, new HumanPlayer(ui), new ComputerPlayer())
+
+      game.run()
+
+      expect('???').toEqual('???')
+    })
+
+    it('plays game WITH TEST DOUBLES', () => {
+      const uiDummy = new UiDummy()
+      const fakePlayer = new FakePlayer('paper', ['n'])
+      const game = new RockPaperScissors(uiDummy, fakePlayer, fakePlayer)
+
+      game.run()
+
+      expect(fakePlayer.makeMoveCallCount()).toEqual(2)
+    })
+  })
+
   describe('Play the game', () => {
     let uiDummy
     let fakeHuman
@@ -30,7 +57,6 @@ describe('RockPaperScissors', () => {
 
     beforeEach(() => {
       uiDummy = new UiDummy()
-
       fakeComputer = new FakePlayer('rock', null)
     })
 
