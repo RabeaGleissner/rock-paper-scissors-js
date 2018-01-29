@@ -7,6 +7,7 @@ describe('RockPaperScissors', () => {
   describe('Calculate winner', () => {
     let winningMove
     let losingMove
+
     beforeEach(() =>{
       game = new RockPaperScissors(null, null, null)
       winningMove = new WinningMoveStub()
@@ -29,20 +30,25 @@ describe('RockPaperScissors', () => {
 
     beforeEach(() => {
       uiDummy = new UiDummy()
+
       fakeComputer = new FakePlayer('rock', null)
     })
 
     it('plays one game', () => {
       fakeHuman = new FakePlayer('paper', ['n'])
       game = new RockPaperScissors(uiDummy, fakeHuman, fakeComputer)
+
       game.run()
+
       expect(fakeHuman.makeMoveCallCount()).toEqual(1)
     })
 
     it('plays two games', () => {
       fakeHuman = new FakePlayer('paper', ['y', 'n'])
       game = new RockPaperScissors(uiDummy, fakeHuman, fakeComputer)
+
       game.run()
+
       expect(fakeHuman.makeMoveCallCount()).toEqual(2)
     })
   })
@@ -56,9 +62,9 @@ class UiDummy {
 }
 
 class FakePlayer {
-  constructor(move, replayChoice) {
+  constructor(move, replayChoices) {
     this.move = move
-    this.replayChoice = replayChoice
+    this.replayChoices = replayChoices
     this.count = 0
   }
 
@@ -68,7 +74,7 @@ class FakePlayer {
   }
 
   getReplayChoice() {
-    return this.replayChoice.shift()
+    return this.replayChoices.shift()
   }
 
   makeMoveCallCount() {
