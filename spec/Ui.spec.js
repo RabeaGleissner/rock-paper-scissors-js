@@ -62,7 +62,7 @@ describe('Ui', () => {
 
   // Jasmine test doubles
 
-  fit('greets user and tests with Jasmine spy', () => {
+  it('greets user and tests with Jasmine spy', () => {
     const uiSpy = spyOn(Ui.prototype, 'greet')
     ui = new Ui(null, uiSpy)
     ui.greet()
