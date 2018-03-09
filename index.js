@@ -2,7 +2,6 @@ import {ComputerPlayer} from './src/ComputerPlayer'
 import HumanPlayer from './src/HumanPlayer'
 import RockPaperScissors from './src/RockPaperScissors'
 import Ui from './src/Ui'
-import prompt from 'prompt-sync'
 
 const consoleInput = require('prompt-sync')()
 const consoleOutput = console
