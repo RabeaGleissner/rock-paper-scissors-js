@@ -67,17 +67,6 @@ describe('Ui', () => {
     expect(outputSpy.printedMessage()).
       toEqual('Byyyeeee!')
   })
-
-  // Jasmine test doubles
-
-  it('greets user and tests with Jasmine spy', () => {
-    const uiSpy = spyOn(Ui.prototype, 'greet')
-    ui = new Ui(null, uiSpy)
-
-    ui.greet()
-
-    expect(ui.greet).toHaveBeenCalled()
-  })
 })
 
 class OutputSpy {

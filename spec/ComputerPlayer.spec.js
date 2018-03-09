@@ -12,4 +12,10 @@ describe('Computer player', function() {
 
     expect(moves).toContain(move)
   })
+
+  it('returns a valid move (using jasmine spy)', () => {
+    spyOn(ComputerPlayer.prototype, 'shuffle').and.returnValue(['Rock', ''])
+
+    expect(computerPlayer.makeMove()).toEqual('Rock')
+  })
 })
