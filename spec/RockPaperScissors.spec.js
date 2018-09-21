@@ -1,8 +1,6 @@
 import HumanPlayer from '../src/HumanPlayer'
-import Move from '../src/Move'
 import RockPaperScissors from '../src/RockPaperScissors'
 import Ui from '../src/Ui'
-import prompt from 'prompt-sync'
 import {ComputerPlayer} from '../src/ComputerPlayer'
 
 describe('RockPaperScissors', () => {

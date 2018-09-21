@@ -8,7 +8,7 @@ var config = {
       { test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: ['env']
           }
@@ -20,6 +20,6 @@ var config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   }
-};
+}
 
-module.exports = [config];
+module.exports = [config]

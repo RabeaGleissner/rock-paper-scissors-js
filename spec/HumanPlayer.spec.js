@@ -10,7 +10,7 @@ describe('Human player', () => {
   })
 
   it('returns a move', function() {
-    expect(humanPlayer.makeMove(uiStub)).toBe('Rock');
+    expect(humanPlayer.makeMove(uiStub)).toBe('Rock')
   })
 })
 
