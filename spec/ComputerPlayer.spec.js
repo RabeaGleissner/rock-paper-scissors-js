@@ -1,13 +1,13 @@
 import {ComputerPlayer, moves} from '../src/ComputerPlayer'
 
-describe('Computer player', function() {
+describe('Computer player', () => {
   let computerPlayer
 
   beforeEach(() => {
     computerPlayer = new ComputerPlayer()
   })
 
-  it('returns a valid move', function() {
+  it('returns a valid move', () => {
     const move = computerPlayer.makeMove()
 
     expect(moves).toContain(move)

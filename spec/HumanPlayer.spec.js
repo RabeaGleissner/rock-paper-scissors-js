@@ -9,7 +9,7 @@ describe('Human player', () => {
     humanPlayer = new HumanPlayer(uiStub)
   })
 
-  it('returns a move', function() {
+  it('returns a move', () => {
     expect(humanPlayer.makeMove(uiStub)).toBe('Rock')
   })
 })
