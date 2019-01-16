@@ -4,8 +4,11 @@
         "es6": true
     },
     "extends": "eslint:recommended",
+    "parser": "typescript-eslint-parser",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "jsx": true,
+        "useJSXTextNode": true
     },
     "rules": {
       "no-undef": "off",
